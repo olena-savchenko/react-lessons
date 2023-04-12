@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const RecipeList = ({ items }) => {
   return (
-    <ul>
+    <ul style={{ display: 'flex', gap: '10px' }}>
       {items.map(item => {
         return (
           <li key={item.id}>

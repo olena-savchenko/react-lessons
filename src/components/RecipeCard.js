@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
 export const RecipeCard = ({
-  item: { image, name, servings, calories, time },
+  item: { image, name, servings, calories, time, difficulty },
 }) => {
   return (
     <div>
       <img src={image} alt={name} width="240" />
       <h2>{name}</h2>
-      <div>
+      <div style={{ display: 'flex', gap: '10px' }}>
         <div>
           <span>Icon</span>
           <p>{time} time</p>
@@ -23,9 +23,9 @@ export const RecipeCard = ({
       </div>
       <h3>Difficalty</h3>
       <div>
-        <span>Easy</span>
-        <span>Medium</span>
-        <span>Hard</span>
+        <span>{difficulty}</span>
+        <span>{difficulty}</span>
+        <span>{difficulty}</span>
       </div>
     </div>
   );
@@ -38,5 +38,6 @@ RecipeCard.propTypes = {
     servings: PropTypes.number.isRequired,
     calories: PropTypes.number.isRequired,
     time: PropTypes.number.isRequired,
+    difficulty: PropTypes.oneOf(['easy', 'medium', 'hard']).isRequired,
   }).isRequired,
 };
